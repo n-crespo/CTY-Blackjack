@@ -12,10 +12,19 @@ public class Deck {
 
   public void createDeck() {
     // create each suit
-    createSuits(0, 12, '♠');
-    createSuits(13, 25, '♣');
-    createSuits(26, 38, '♥');
-    createSuits(39, 51, '♦');
+    // createSuits(0, 12, '♠');
+    // createSuits(13, 25, '♣');
+    // createSuits(26, 38, '♥');
+    // createSuits(39, 51, '♦');
+
+    // spades
+    createSuits(0, 12, 'S');
+    // clubs
+    createSuits(13, 25, 'C');
+    // hearts
+    createSuits(26, 38, 'H');
+    // diamonds
+    createSuits(39, 51, 'D');
 
     // createSuits(0, 12, '\u0006');
     // createSuits(13, 25, '\u0005');

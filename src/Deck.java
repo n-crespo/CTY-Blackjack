@@ -1,10 +1,10 @@
 public class Deck {
 
-  //deck attributes/deck array
+  // deck attributes/deck array
   Card[] deck = new Card[52];
   int deckPosition = 0;
 
-  //increases deck position and returns next card in the deck
+  // increases deck position and returns next card in the deck
   public Card getNextCard() {
     deckPosition++;
     return deck[deckPosition - 1];
@@ -12,28 +12,28 @@ public class Deck {
 
   public void createDeck() {
     // create each suit
-    // createSuits(0, 12, '♠');
-    // createSuits(13, 25, '♣');
-    // createSuits(26, 38, '♥');
-    // createSuits(39, 51, '♦');
+    createSuits(0, 12, '♠');
+    createSuits(13, 25, '♣');
+    createSuits(26, 38, '♥');
+    createSuits(39, 51, '♦');
 
-    createSuits(0, 12, '\u0006');
-    createSuits(13, 25, '\u0005');
-    createSuits(26, 38, '\u0003');
-    createSuits(39, 51, '\u0004');
+    // createSuits(0, 12, '\u0006');
+    // createSuits(13, 25, '\u0005');
+    // createSuits(26, 38, '\u0003');
+    // createSuits(39, 51, '\u0004');
   }
 
   void createSuits(int startPos, int endPos, char suit) {
     int cardValue = 2;
 
-    //create aces
+    // create aces
     Card ace = new Card();
     deck[startPos] = ace;
     ace.setCardRank("Ace");
     ace.setCardSuit(suit);
     ace.setCardValue(1);
 
-    //create number cards
+    // create number cards
     for (int i = startPos + 1; i <= endPos - 2; i++) {
       Card card = new Card();
       card.setCardValue(cardValue);
@@ -42,7 +42,7 @@ public class Deck {
       card.setCardRank(String.valueOf(cardValue - 1));
       deck[i] = card;
     }
-    //create 3 letter cards
+    // create 3 letter cards
     for (int i = endPos - 2; i <= endPos; i++) {
       Card card = new Card();
       card.setCardValue(10);
@@ -60,7 +60,8 @@ public class Deck {
     }
   }
 
-  //gets a random number and switches the deck[random number] with the first/next card in the deck
+  // gets a random number and switches the deck[random number] with the first/next
+  // card in the deck
   public void shuffle() {
     for (int i = 0; i < deck.length; i++) {
       int index = (int) (Math.random() * deck.length);

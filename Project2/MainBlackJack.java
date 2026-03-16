@@ -1,23 +1,21 @@
-
 //Nicolas Crespo, July 9, 2021, game of blackjack
+package Project2;
+
 import java.util.Scanner;
 
 public class MainBlackJack {
 
   public static void main(String[] args) {
-    try (Scanner input = new Scanner(System.in)) {
-      String response = "yes";
-      // plays a round, then asks if player wants to play again
-      while (response.equals("yes")) {
-        playRound();
-        System.out.println(
-            "\n----------------------------------------------------------");
-        System.out.println(
-            "Would you like to play again? Please enter 'yes' or 'no.' ");
-        System.out.println(
-            "----------------------------------------------------------");
-        response = input.next();
-      }
+
+    Scanner input = new Scanner(System.in);
+    String response = "yes";
+    // plays a round, then asks if player wants to play again
+    while (response.equals("yes")) {
+      playRound();
+      System.out.println("\n----------------------------------------------------------");
+      System.out.println("Would you like to play again? Please enter 'yes' or 'no.' ");
+      System.out.println("----------------------------------------------------------");
+      response = input.next();
     }
     System.out.println("Thanks for playing! ");
   }
